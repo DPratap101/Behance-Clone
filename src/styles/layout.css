@@ -1,0 +1,171 @@
+/* Layout styles */
+.p-container {
+    display: flex;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.p-header {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between profile and heading */
+    margin-bottom: 20px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile button {
+    width: 50px; /* Adjust width */
+    height: 50px; /* Adjust height */
+    border-radius: 50%; 
+    overflow: hidden; /* Optional: if you want to hide overflow */
+}
+
+.profile-text {
+    margin-left: 10px; /* Space between image and text */
+}
+
+.profile-text>h2 {
+    margin: 0; 
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+
+.follow {
+    font-size: 14px; /* Adjust font size */
+    color: #191919; /* Adjust color as needed */
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.tonic-black {
+    font-size: 14px; 
+    color: #191919; 
+    cursor: pointer;
+}
+
+.follow:hover,
+.tonic-black:hover{
+    text-decoration: underline;
+}
+
+
+
+
+/* Sidebar styles */
+.sidebar {
+    width: 45px;           
+    padding: 10px;
+    background-color: transparent; 
+    position: sticky;
+    top: 75px;
+    height: 100vh;            
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+}
+
+.sidebar div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Profile styles */
+.profile {
+    position: relative;
+}
+
+.profile button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.profile .plus-icon {
+    position: absolute;
+    top: 38px;
+    left: 70%;
+    transform: translateX(-50%);
+    background-color: blue;
+    color: rgb(255, 255, 255);
+    border-radius: 50%; 
+    font-size: 11px;
+    width: 17px;
+    height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.sidebar button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    color: black;
+    border: 2px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+}
+
+.sidebar button:hover {
+    background-color: #000000;
+    color: white;
+    border: 2px solid black;
+}
+
+.sidebar .btn-black {
+    background-color: black;
+    color: white;
+    font-size: 17px;
+    display: block;
+}
+
+.sidebar .btn-black .btn-text {
+    font-size: 7px;
+    margin: 0;
+}
+
+.sidebar span {
+    font-size: 14px;
+    margin-top: 5px;
+    color: black;
+    text-align: center;
+}
+
+/* Main content styles */
+.main-content {
+    flex: 1;
+    padding: 10px;
+}
+
+/* No changes to image styles */
+.image-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.image-grid img {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
