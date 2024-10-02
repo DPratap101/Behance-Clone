@@ -9,7 +9,7 @@ function App() {
         <div className="logo-and-linksABK">
           <div className="behance-logoABK">
             <a href="#root">
-              <img src="footerlogo.png" alt="Behance Logo" />
+              <img src="src\assets\footerlogo.png" alt="Behance Logo" />
             </a>
           </div>
           <div className="links-containerABK">
