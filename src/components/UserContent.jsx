@@ -75,7 +75,7 @@ const UserContent = () => {
               />
             </button>
             <div className="plus-icon">
-              <i class="fa-solid fa-plus"></i>
+              <i className="fa-solid fa-plus"></i> {/* Corrected */}
             </div>
             <span>Follow</span>
           </div>
