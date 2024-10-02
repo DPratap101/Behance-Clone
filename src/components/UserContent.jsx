@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/layout.css"; // Import CSS styles
+import Modal from "./Modal"; // Import the Modal component
 
 // Import images from the assets folder
 import image1 from "../assets/image1.png";
@@ -35,13 +36,65 @@ const images = [
 ];
 
 const UserContent = () => {
+  const [showHeaderModal, setShowHeaderModal] = useState(false);
+  const [showSidebarModal, setShowSidebarModal] = useState(false);
+  const [modalPosition, setModalPosition] = useState({ top: 0, left: 0 });
+  const [modalTimeout, setModalTimeout] = useState(null);
+
+  // Handlers for header profile modal
+  const handleHeaderMouseEnter = (e) => {
+    setShowHeaderModal(true);
+    const rect = e.currentTarget.getBoundingClientRect();
+    setModalPosition({
+      top: rect.bottom + window.scrollY,
+      left: rect.left + window.scrollX,
+    });
+  };
+
+  const handleHeaderMouseLeave = () => {
+    setShowHeaderModal(false);
+  };
+
+  // Handlers for sidebar profile modal
+  const handleSidebarMouseEnter = (e) => {
+    setShowSidebarModal(true);
+    const rect = e.currentTarget.getBoundingClientRect();
+    setModalPosition({
+      top: rect.bottom + window.scrollY - 70,
+      left: rect.left - 205,
+    });
+  };
+
+  const handleSidebarMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setShowSidebarModal(false);
+    }, 100); // Delay for sidebar modal close
+    setModalTimeout(timeout);
+  };
+
+  const handleModalMouseEnter = () => {
+    if (modalTimeout) {
+      clearTimeout(modalTimeout);
+      setModalTimeout(null);
+    }
+  };
+
+  const handleModalMouseLeave = () => {
+    setShowSidebarModal(false);
+  };
+
   return (
     <section className="user-section">
       <div className="p-container">
         <main className="main-content">
+          {/* Header Section */}
           <div className="p-header">
-            <div className="h-profile">
-              <button>
+            <div
+              className="h-profile"
+              onMouseEnter={handleHeaderMouseEnter}
+              onMouseLeave={handleHeaderMouseLeave}
+            >
+              <button className="btn">
                 <img
                   src="https://mir-s3-cdn-cf.behance.net/user/50/bae8791272723445.66a2223992876.jpg"
                   alt="Profile"
@@ -52,9 +105,20 @@ const UserContent = () => {
                 <span className="tonic-black">Tonic Black</span>
                 <span className="follow">Follow</span>
               </div>
+
+              {/* Modal for header profile */}
+              {showHeaderModal && (
+                <Modal
+                  showModal={showHeaderModal}
+                  closeModal={handleHeaderMouseLeave}
+                  position={modalPosition}
+                  customClass="header-modal" // Optional for different modal styles
+                />
+              )}
             </div>
           </div>
 
+          {/* Image Grid Section */}
           <div className="image-grid">
             {images.map((src, index) => (
               <img
@@ -66,17 +130,24 @@ const UserContent = () => {
             ))}
           </div>
         </main>
+
+        {/* Sidebar Navigation */}
         <nav className="sidebar">
-          <div className="n-profile">
+          <div
+            className="n-profile"
+            onMouseEnter={handleSidebarMouseEnter}
+            onMouseLeave={handleSidebarMouseLeave}
+          >
             <button>
               <img
                 src="https://mir-s3-cdn-cf.behance.net/user/50/bae8791272723445.66a2223992876.jpg"
                 alt="Profile"
               />
             </button>
-            <div className="plus-icon">
-              <i className="fa-solid fa-plus"></i> {/* Corrected */}
-            </div>
+<div className="plus-icon">
+  <i className="fa-solid fa-plus"></i>
+</div>
+
             <span>Follow</span>
           </div>
           <div>
@@ -110,6 +181,18 @@ const UserContent = () => {
             </button>
           </div>
         </nav>
+
+        {/* Sidebar Modal */}
+        {showSidebarModal && (
+          <Modal
+            showModal={showSidebarModal}
+            closeModal={handleSidebarMouseLeave}
+            position={modalPosition}
+            customClass="sidebar-modal" // Optional for different modal styles
+            onMouseEnter={handleModalMouseEnter}
+            onMouseLeave={handleModalMouseLeave}
+          />
+        )}
       </div>
     </section>
   );
