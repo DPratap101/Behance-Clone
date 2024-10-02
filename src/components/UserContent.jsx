@@ -144,9 +144,10 @@ const UserContent = () => {
                 alt="Profile"
               />
             </button>
-            <div className="plus-icon">
-              <i className="fa-solid fa-plus"></i>
-            </div>
+<div className="plus-icon">
+  <i className="fa-solid fa-plus"></i>
+</div>
+
             <span>Follow</span>
           </div>
           <div>
