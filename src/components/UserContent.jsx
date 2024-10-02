@@ -46,7 +46,7 @@ const UserContent = () => {
     setShowHeaderModal(true);
     const rect = e.currentTarget.getBoundingClientRect();
     setModalPosition({
-      top: rect.bottom + window.scrollY,
+      top: rect.bottom + window.scrollY-99,
       left: rect.left + window.scrollX,
     });
   };
