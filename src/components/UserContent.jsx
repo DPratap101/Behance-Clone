@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/layout.css"; // Import CSS styles
+import Modal from "./Modal"; // Import the Modal component
 
 // Import images from the assets folder
 import image1 from "../assets/image1.png";
@@ -35,12 +36,22 @@ const images = [
 ];
 
 const UserContent = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleMouseEnter = () => setShowModal(true);
+  const handleMouseLeave = () => setShowModal(false);
+
   return (
     <section className="user-section">
       <div className="p-container">
         <main className="main-content">
+          {/* Header Section */}
           <div className="p-header">
-            <div className="h-profile">
+            <div
+              className="h-profile"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
               <button>
                 <img
                   src="https://mir-s3-cdn-cf.behance.net/user/50/bae8791272723445.66a2223992876.jpg"
@@ -52,9 +63,15 @@ const UserContent = () => {
                 <span className="tonic-black">Tonic Black</span>
                 <span className="follow">Follow</span>
               </div>
+
+              {/* Modal component should stay open when hovering */}
+              {showModal && (
+                <Modal showModal={showModal} closeModal={handleMouseLeave} />
+              )}
             </div>
           </div>
 
+          {/* Image Grid Section */}
           <div className="image-grid">
             {images.map((src, index) => (
               <img
@@ -66,6 +83,8 @@ const UserContent = () => {
             ))}
           </div>
         </main>
+
+        {/* Sidebar Navigation */}
         <nav className="sidebar">
           <div className="n-profile">
             <button>
@@ -75,7 +94,7 @@ const UserContent = () => {
               />
             </button>
             <div className="plus-icon">
-              <i class="fa-solid fa-plus"></i>
+              <i className="fa-solid fa-plus"></i>
             </div>
             <span>Follow</span>
           </div>

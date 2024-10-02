@@ -194,11 +194,11 @@
     .sidebar {
         position: absolute;
         top: -4px;
-        right: 90px;
+        right: 10%;
         flex-direction: row;
         justify-content: flex-start; /* Align icons to the left */
         align-items: center;
-        gap: 15px; /* Space between icons */
+        gap: 2%; /* Space between icons */
         width: 100%; /* Take full width */
         padding: 10px 20px;
         height: auto;
