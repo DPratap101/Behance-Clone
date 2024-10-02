@@ -36,78 +36,82 @@ const images = [
 
 const UserContent = () => {
   return (
-    <div className="p-container">
-      <main className="main-content">
-        <div className="p-header">
-          <div className="profile">
+    <section className="user-section">
+      <div className="p-container">
+        <main className="main-content">
+          <div className="p-header">
+            <div className="h-profile">
+              <button>
+                <img
+                  src="https://mir-s3-cdn-cf.behance.net/user/50/bae8791272723445.66a2223992876.jpg"
+                  alt="Profile"
+                />
+              </button>
+              <div className="profile-text">
+                <h2>Harley-Davidson UX/UI</h2>
+                <span className="tonic-black">Tonic Black</span>
+                <span className="follow">Follow</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="image-grid">
+            {images.map((src, index) => (
+              <img
+                key={index}
+                src={src}
+                alt={`Image ${index + 1}`}
+                loading="lazy"
+              />
+            ))}
+          </div>
+        </main>
+        <nav className="sidebar">
+          <div className="n-profile">
             <button>
               <img
                 src="https://mir-s3-cdn-cf.behance.net/user/50/bae8791272723445.66a2223992876.jpg"
                 alt="Profile"
               />
             </button>
-            <div className="profile-text">
-              <h2>Harley-Davidson UX/UI</h2>
-              <span className="tonic-black">Tonic Black</span>
-              <span className="follow">Follow</span>
+            <div className="plus-icon">
+              <i class="fa-solid fa-plus"></i>
             </div>
+            <span>Follow</span>
           </div>
-        </div>
-
-        <div className="image-grid">
-          {images.map((src, index) => (
-            <img
-              key={index}
-              src={src}
-              alt={`Image ${index + 1}`}
-              loading="lazy"
-            />
-          ))}
-        </div>
-      </main>
-      <nav className="sidebar">
-        <div className="profile">
-          <button>
-            <img
-              src="https://mir-s3-cdn-cf.behance.net/user/50/bae8791272723445.66a2223992876.jpg"
-              alt="Profile"
-            />
-          </button>
-          <div className="plus-icon"><i class="fa-solid fa-plus"></i></div>
-          <span>Follow</span>
-        </div>
-        <div>
-          <button>
-            <i className="fa-sharp fa-solid fa-envelope"></i>
-          </button>
-          <span>Hire</span>
-        </div>
-        <div>
-          <button>
-            <i className="fa-solid fa-screwdriver-wrench"></i>
-          </button>
-          <span>Tools</span>
-        </div>
-        <div>
-          <button>
-            <i className="fa-solid fa-floppy-disk"></i>
-          </button>
-          <span>Save</span>
-        </div>
-        <div>
-          <button>
-            <i className="fa-solid fa-share-from-square"></i>
-          </button>
-          <span>Share</span>
-        </div>
-        <div>
-          <button className="btn-black">
-            <i className="fa-solid fa-thumbs-up"></i>
-            <p className="btn-text">711</p>
-          </button>
-        </div>
-      </nav>
-    </div>
+          <div>
+            <button>
+              <i className="fa-sharp fa-solid fa-envelope"></i>
+            </button>
+            <span>Hire</span>
+          </div>
+          <div>
+            <button>
+              <i className="fa-solid fa-screwdriver-wrench"></i>
+            </button>
+            <span>Tools</span>
+          </div>
+          <div>
+            <button>
+              <i className="fa-solid fa-floppy-disk"></i>
+            </button>
+            <span>Save</span>
+          </div>
+          <div>
+            <button>
+              <i className="fa-solid fa-share-from-square"></i>
+            </button>
+            <span>Share</span>
+          </div>
+          <div>
+            <button className="btn-black">
+              <i className="fa-solid fa-thumbs-up"></i>
+              <p className="btn-text">711</p>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </section>
   );
 };
 

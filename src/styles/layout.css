@@ -1,7 +1,9 @@
+
 /* Layout styles */
 .p-container {
     display: flex;
     max-width: 1300px;
+    width: 100%;
     margin: auto;
 }
 
@@ -12,16 +14,24 @@
     margin-bottom: 20px;
 }
 
-.profile {
+.h-profile {
     display: flex;
     align-items: center;
+    position: relative;
 }
 
-.profile button {
+.h-profile button {
     width: 50px; /* Adjust width */
     height: 50px; /* Adjust height */
     border-radius: 50%; 
     overflow: hidden; /* Optional: if you want to hide overflow */
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .profile-text {
@@ -58,7 +68,7 @@
 
 /* Sidebar styles */
 .sidebar {
-    width: 45px;           
+    width: 85px;           
     padding: 10px;
     background-color: transparent; 
     position: sticky;
@@ -78,11 +88,13 @@
 }
 
 /* Profile styles */
-.profile {
+.n-profile {
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
-.profile button {
+.n-profile button {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -94,7 +106,7 @@
     position: relative;
 }
 
-.profile .plus-icon {
+.n-profile .plus-icon {
     position: absolute;
     top: 38px;
     left: 70%;
@@ -154,7 +166,7 @@
 /* Main content styles */
 .main-content {
     flex: 1;
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 /* No changes to image styles */
@@ -169,3 +181,111 @@
     padding: 0;
     display: block;
 }
+
+
+/* Responsive styling for max-width 1020px */
+@media (max-width: 1020px) {
+    .p-container {
+        flex-direction: column-reverse; /* Stack sidebar and main content vertically */
+        align-items: center;
+        width: 100vw;
+    }
+
+    .sidebar {
+        position: absolute;
+        top: -4px;
+        right: 90px;
+        flex-direction: row;
+        justify-content: flex-start; /* Align icons to the left */
+        align-items: center;
+        gap: 15px; /* Space between icons */
+        width: 100%; /* Take full width */
+        padding: 10px 20px;
+        height: auto;
+    }
+
+    /* Hide everything in .n-profile except the span text */
+    .n-profile button {
+        display: none;
+    }
+
+    .n-profile .plus-icon {
+        display: none;
+    }
+
+    /* Ensure only span text is visible and moved to the end of the icons */
+    .n-profile {
+        margin-left: auto; /* Push the span to the end of all icons */
+    }
+
+    .n-profile span {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #000; /* Optional: Button-like style */
+        color: white;
+        border-radius: 50px; /* Curved button appearance */
+        text-align: center;
+        position: inherit;
+        bottom: 3px;
+        left: 295px;
+    }
+
+    .n-profile span:hover {
+        background-color: #555; /* Optional: Hover effect */
+    }
+
+    /* Remove tools icon */
+    .tools-icon {
+        display: none;
+    }
+
+    /* Add "Follow" button in place of plus icon */
+    .sidebar .follow-btn {
+        display: block;
+        margin-left: auto;
+        margin-right: 15px;
+    }
+
+    .sidebar button {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+    }
+
+    /* Hide all button text except for the n-profile span */
+    .sidebar button .btn-text,
+    .sidebar span:not(.n-profile span) {
+        display: none;
+    }
+
+    .sidebar .btn-black {
+        display: none; /* Hide the button if not required in this layout */
+    }
+
+    /* Align sidebar content horizontally in the header */
+    .p-header {
+        justify-content: space-between; /* Spread the elements */
+        width: 100%; /* Full width */
+    }
+
+    .profile {
+        display: flex;
+        align-items: center;
+        flex: 1;
+    }
+
+    .profile-text {
+        margin-left: 10px;
+    }
+
+    .image-grid {
+        flex-direction: column;
+    }
+
+    .image-grid img {
+        width: 100vw; /* Full screen width */
+    }
+}
+
+
+
