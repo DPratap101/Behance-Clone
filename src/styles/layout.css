@@ -120,6 +120,47 @@
     cursor: pointer;
 }
 
+.pro-info-container{
+    text-align: center;
+    background-color: #000;
+    color: white;
+    padding: 50px 50px;
+    height: auto;
+}
+
+.pro-like-blue>.pro-button{
+    width: 75px;
+    height: 75px;
+    color: white;
+    font-size: 20px;
+    background-color: #0057ff;
+    border: 1px solid #0057ff;
+    border-radius: 50%;
+}
+
+.pro-like-blue>.pro-button:hover{
+    background-color: #003db8;
+}
+
+.pro-like-blue>.pro-like-heading{
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.pro-stats>.pro-button{
+    background-color: transparent;
+    color: #939594;
+    border: none;
+    padding: 10px 0;
+    margin-left: 20px;
+}
+
+.pro-publish{
+    color: #939594;
+    margin-top: 24px;
+}
+
+
 .sidebar button {
     width: 50px;
     height: 50px;
