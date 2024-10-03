@@ -335,12 +335,12 @@ const UserContent = () => {
         {selectedImageIndex !== null && (
           <div className="image-viewer full-screen">
             <div className="image-viewer-content">
-              <button className="close-btn" onClick={handleClose}>X</button>
+              <button className="close-btn" onClick={handleClose}><i class="fa-regular fa-circle-xmark"></i></button>
 
               {/* Left Arrow */}
               {selectedImageIndex > 0 && (
                 <button className="arrow-left" onClick={handlePrevious}>
-                  {"<"}
+                  {<i class="fa-solid fa-chevron-left"></i>}
                 </button>
               )}
 
@@ -353,7 +353,7 @@ const UserContent = () => {
               {/* Right Arrow */}
               {selectedImageIndex < images.length - 1 && (
                 <button className="arrow-right" onClick={handleNext}>
-                  {">"}
+                  {<i class="fa-solid fa-chevron-right"></i>}
                 </button>
               )}
             </div>
