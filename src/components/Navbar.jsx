@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import '../styles/Navbar.css'; 
 import downArrow from '../assets/down-arrow.svg'; 
 import adobeLogo from '../assets/adobe-logo.png'; 
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [exploreDropdownOpen, setExploreDropdownOpen] = useState(false);
@@ -91,7 +92,7 @@ function Navbar() {
 
       <div className="navbar-right">
         <i className="fa-solid fa-bell" style={{ color: '#0a0a0a', marginRight: '10px' }}></i> {/* Adjust margin for bell */}
-        <a href="/login" className="login-button">Log In</a>
+        <Link to="/login" className="login-button">Log In</Link>
         <a href="/signup" className="signup-button">Sign Up</a>
         <p><img src={adobeLogo} className="adobe-logo" alt="Adobe" /></p>
       </div>
@@ -107,7 +108,7 @@ function Navbar() {
           <a href="/jobs" className="nav-item">Jobs</a>
           <a href="/hire-freelancers" className="nav-item">Hire Freelancers</a>
           <a href="/behance-pro" className="nav-item">Behance <span className="highlight">PRO</span></a> {/* Added Behance PRO */}
-          <a href="/login" className="nav-item">Log In</a>
+          <a href="" className="nav-item">Log In</a>
           <a href="/signup" className="nav-item">Sign Up</a>
           
         </div>
