@@ -1,11 +1,13 @@
+.user-section {
+    margin-top: 100px;
+    margin-bottom: 300px;
+}
 
-/* Layout styles */
 .p-container {
     display: flex;
     max-width: 1300px;
     width: 100%;
     margin: auto;
-    padding-top: 100px;
 }
 
 .p-header {
@@ -21,13 +23,11 @@
     position: relative;
 }
 
-.h-profile>.btn {
-    width: 50px; /* Adjust width */
-    height: 50px; /* Adjust height */
+.h-profile > .btn {
+    width: 50px; 
+    height: 50px; 
     border-radius: 50%; 
-    overflow: hidden; /* Optional: if you want to hide overflow */
-    border-radius: 50%;
-    background-color: transparent;
+    overflow: hidden; 
     border: 2px solid gray;
     display: flex;
     align-items: center;
@@ -39,12 +39,11 @@
     margin-left: 10px; /* Space between image and text */
 }
 
-.profile-text>h2 {
+.profile-text > h2 {
     margin: 0; 
     font-size: 16px;
     margin-bottom: 2px;
 }
-
 
 .follow {
     font-size: 14px; /* Adjust font size */
@@ -60,12 +59,9 @@
 }
 
 .follow:hover,
-.tonic-black:hover{
+.tonic-black:hover {
     text-decoration: underline;
 }
-
-
-
 
 /* Sidebar styles */
 .sidebar {
@@ -73,15 +69,15 @@
     padding: 10px;
     background-color: transparent; 
     position: sticky;
-    top: 75px;
+    top: 60px;
     height: 100vh;            
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 35px;
+    gap: 25px;
 }
 
-.sidebar div {
+.sidebar > div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -183,7 +179,6 @@
     display: block;
 }
 
-
 /* Responsive styling for max-width 1020px */
 @media (max-width: 1020px) {
     .p-container {
@@ -194,7 +189,7 @@
 
     .sidebar {
         position: absolute;
-        top: -4px;
+        top: 99px;
         right: 10%;
         flex-direction: row;
         justify-content: flex-start; /* Align icons to the left */
@@ -288,5 +283,42 @@
     }
 }
 
+/* Responsive styling for max-width 660px */
+@media (max-width: 660px) {
+    .sidebar {
+        display: none; /* Hide the sidebar */
+    }
 
+    .p-container {
+        flex-direction: column; /* Stack items vertically */
+    }
 
+    .main-content {
+        width: 100%; /* Ensure full width for main content */
+    }
+}
+
+/* Responsive styling for max-width 300px */
+@media (max-width: 300px) {
+    .p-header {
+        flex-direction: column; /* Stack header elements vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .p-header h2 {
+        font-size: 14px; /* Reduce font size */
+    }
+
+    .profile-text > h2 {
+        font-size: 12px; /* Further reduce font size */
+    }
+
+    .follow, .tonic-black {
+        font-size: 12px; /* Adjust font size */
+    }
+
+    .image-grid img {
+        width: 100%; /* Full width for images */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
