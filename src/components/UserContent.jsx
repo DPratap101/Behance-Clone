@@ -129,6 +129,33 @@ const UserContent = () => {
               />
             ))}
           </div>
+          {/* New Section for Likes, Views, Comments */}
+          
+          <div className="pro-info-container">
+              <div className="pro-like-blue">
+                <button className="pro-button">
+                  <i className="fa-solid fa-thumbs-up"></i>
+                </button>
+                <h2 className="pro-like-heading">Harley-Davidson UX/UI</h2>
+              </div>
+              <div className="pro-stats">
+                <button className="pro-button">
+                  <i className="fa-solid fa-thumbs-up"></i> 711k
+                </button>
+                <button className="pro-button">
+                  <i className="fa-solid fa-eye"></i> 3.9k
+                </button>
+                <button className="pro-button">
+                  <i className="fa-solid fa-message"></i> 1.2k
+                </button>
+              </div>
+              <div className="pro-publish">
+                <p>Published: March 17th 2023</p>
+              </div>
+            </div>
+
+
+            
         </main>
 
         {/* Sidebar Navigation */}
