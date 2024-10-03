@@ -363,3 +363,159 @@
         height: auto; /* Maintain aspect ratio */
     }
 }
+
+
+.comments-project-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Space above the section */
+    padding-left: 100px;
+    gap: 8%;
+    background-color: #fafafa;
+  }
+  
+  .comments-column {
+    flex: 1; /* Adjusts the width */
+    margin-right: 20px; /* Space between columns */
+  }
+  
+  .project-info-column {
+    flex: 1; /* Adjusts the width */
+  }
+  
+  .info-card {
+    background-color: #fff; /* Card background */
+    padding: 22px; /* Card padding */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for card */
+    margin-bottom: 20px; /* Space below each card */
+    width: 80%;
+    height: auto;
+  }
+
+  .info-card>.info-card-heading{
+    font-size: 12px;
+    color: #7a7a7a;
+    margin-bottom: 10px;
+  }
+  
+  .user-comments {
+    margin-top: 20px; /* Space above comments */
+  }
+  
+  .user-comment {
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center alignment */
+    margin-bottom: 10px; /* Space between comments */
+  }
+  
+  .user-comment-image {
+    width: 40px; /* Size for user comment image */
+    height: 40px; /* Size for user comment image */
+    border-radius: 50%; /* Circular shape */
+    background-color: #ccc; /* Placeholder color */
+    margin-right: 10px; /* Space between image and text */
+  }
+
+  .owner-info{
+    display: flex;
+    gap: 20px;
+  }
+
+  .owner-name-loc>p:nth-of-type(1){
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 5px;
+  }
+  .owner-name-loc>p:nth-of-type(1):hover{
+    text-decoration: underline;
+  }
+  .owner-name-loc>p:nth-of-type(2){
+    font-size: 14px;
+    color: #515151;
+  }
+  .owner-name-loc>p:nth-of-type(2):hover{
+    color: #000000;
+  }
+  
+  .owner-profile-pic,
+  .company-profile-pic {
+    width: 45px; /* Size for profile pictures */
+    height: 45px; /* Size for profile pictures */
+    border-radius: 50%; /* Circular shape */
+    background-color: #ccc; /* Placeholder color */
+    overflow: hidden;
+  }
+
+  .owner-profile-pic>img{
+    width: 100%;
+  }
+
+  .owner-info-btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .owner-info-btn>.owner-info-follow-button,
+  .owner-info-btn>.owner-info-hire-button{
+    width: 100%;
+    padding: 9px 0;
+    font-size: 17px;
+    border-radius: 25px;
+    border: 2px solid #0057ff;
+    background-color: #0057ff;
+    color: white;
+  }
+
+  .owner-info-btn>.owner-info-follow-button{
+    margin: 20px 0;
+  }
+
+  .owner-info-btn>.owner-info-hire-button{
+    background-color: transparent;
+    border: 2px solid rgb(207, 207, 207);
+    color: #0057ff;
+  }
+
+  .owner-info-btn>.owner-info-follow-button:hover,
+  .owner-info-btn>.owner-info-hire-button:hover{
+    background-color: #003db8;
+    color: white;
+  }
+
+  .company-info{
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    padding: 15px 0;
+  }
+  .company-info>.company-profile-pic>img{
+    width: 100%;
+  }
+  .company-info>p{
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  .company-info>p:hover{
+    text-decoration: underline;
+  }
+
+  .project-card>p:nth-of-type(1){
+    font-size: 15px;
+    font-weight: 600;
+    margin: 10px 0px;
+  }
+  
+  .social-login-buttons {
+    display: flex; /* Flexbox for buttons */
+    gap: 10px; /* Space between buttons */
+  }
+  
+  .creative-buttons {
+    display: flex; /* Flexbox for buttons */
+    gap: 5px; /* Space between buttons */
+  }
+  

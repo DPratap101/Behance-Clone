@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "../styles/SignIn.css";
 
-const SignIn= () => {
+const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoggingIn, setIsLoggingIn] = useState(false); // New state to track login status
 
   const loginFn = async (event) => {
     event.preventDefault();
+    setIsLoggingIn(true); // Set login state to true when starting the login process
 
     const api = "AIzaSyDHO9-l6UOCnT2HN7EdAJczOb3Se8LDTQY";
 
@@ -40,6 +42,8 @@ const SignIn= () => {
       }
     } catch (error) {
       console.error("Login error", error);
+    } finally {
+      setIsLoggingIn(false); // Reset login state after login attempt
     }
   };
 
@@ -53,7 +57,7 @@ const SignIn= () => {
             src="https://img.icons8.com/glyph-neue/64/behance.png"
             alt="behance"
           />
-          <p>Behance</p>
+          <p><i class="fa-brands fa-behance"></i>hance</p>
         </div>
       </div>
 
@@ -81,19 +85,21 @@ const SignIn= () => {
             required
           />
 
-          <button type="submit" className="continue-btn">
-            Continue
+          <button
+            type="submit"
+            className="continue-btn"
+            disabled={isLoggingIn} // Disable button while logging in
+          >
+            {isLoggingIn ? "Logging in..." : "Continue"} {/* Show spinner or text */}
           </button>
         </form>
 
         <div className="or-separator">Or</div>
 
         <div className="social-buttons">
-          <button className="social-btn google">Continue with Google</button>
-          <button className="social-btn facebook">
-            Continue with Facebook
-          </button>
-          <button className="social-btn apple">Continue with Apple</button>
+          <button className="social-btn google"><i class="fa-brands fa-google"></i> Continue with Google</button>
+          <button className="social-btn facebook"><i class="fa-brands fa-facebook"></i> Continue with Facebook</button>
+          <button className="social-btn apple"><i class="fa-brands fa-apple"></i> Continue with Apple</button>
         </div>
 
         <a href="/help-sign-in" className="help-link">
