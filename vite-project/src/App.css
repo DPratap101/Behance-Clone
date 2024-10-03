@@ -1,0 +1,42 @@
+body
+{
+margin: 0;
+}
+
+.rs-container
+{
+  
+ background-position: center;
+ background-size: cover;
+height: 100vh;
+ background-image: url("https://www.imagescanada.ca/wp-content/uploads/2018/09/Best-nature-spots-to-take-photos-in-Canada.jpg");
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.rs-container form
+{
+  display: flex;
+flex-direction: column;
+padding: 20px;
+border-radius: 10px;
+background-color: white;
+align-items: center;
+justify-content: center;
+gap: 10px;
+}
+
+.rs-container form h2
+{
+  margin: 0;
+}
+
+.rs-container form button
+{
+  background-color: rgb(0, 132, 214);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
