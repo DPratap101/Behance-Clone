@@ -1,16 +1,15 @@
-import Navbar from './components/Navbar';
-import UserContent from './components/UserContent'
-import Footer from './components/footer/Footer'
-
+import Navbar from "./components/Navbar";
+import UserContent from "./components/UserContent";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <UserContent />
-<Footer />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -46,7 +46,7 @@ const UserContent = () => {
     setShowHeaderModal(true);
     const rect = e.currentTarget.getBoundingClientRect();
     setModalPosition({
-      top: rect.bottom + window.scrollY-99,
+      top: rect.bottom + window.scrollY - 99,
       left: rect.left + window.scrollX,
     });
   };
@@ -144,9 +144,9 @@ const UserContent = () => {
                 alt="Profile"
               />
             </button>
-<div className="plus-icon">
-  <i className="fa-solid fa-plus"></i>
-</div>
+            <div className="plus-icon">
+              <i className="fa-solid fa-plus"></i>
+            </div>
 
             <span>Follow</span>
           </div>
