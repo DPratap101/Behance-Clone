@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import "../styles/layout.css"; // Import CSS styles
 import Modal from "./Modal"; // Import the Modal component
@@ -36,13 +37,35 @@ const images = [
 ];
 
 const UserContent = () => {
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null); // State to track the selected image
   const [showHeaderModal, setShowHeaderModal] = useState(false);
   const [showSidebarModal, setShowSidebarModal] = useState(false);
   const [modalPosition, setModalPosition] = useState({ top: 0, left: 0 });
   const [modalTimeout, setModalTimeout] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false); // State to check if the user is logged in
 
-  // Handlers for header profile modal
+  // Handlers for the image modal
+  const handleImageClick = (index) => {
+    setSelectedImageIndex(index); // Set clicked image as the selected one
+  };
+
+  const handleNext = () => {
+    if (selectedImageIndex < images.length - 1) {
+      setSelectedImageIndex(selectedImageIndex + 1);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (selectedImageIndex > 0) {
+      setSelectedImageIndex(selectedImageIndex - 1);
+    }
+  };
+
+  const handleClose = () => {
+    setSelectedImageIndex(null); // Reset selected image to close viewer
+  };
+
+  // Handlers for header and sidebar modals (unchanged)
   const handleHeaderMouseEnter = (e) => {
     setShowHeaderModal(true);
     const rect = e.currentTarget.getBoundingClientRect();
@@ -56,7 +79,6 @@ const UserContent = () => {
     setShowHeaderModal(false);
   };
 
-  // Handlers for sidebar profile modal
   const handleSidebarMouseEnter = (e) => {
     setShowSidebarModal(true);
     const rect = e.currentTarget.getBoundingClientRect();
@@ -69,7 +91,7 @@ const UserContent = () => {
   const handleSidebarMouseLeave = () => {
     const timeout = setTimeout(() => {
       setShowSidebarModal(false);
-    }, 100); // Delay for sidebar modal close
+    }, 100);
     setModalTimeout(timeout);
   };
 
@@ -106,16 +128,6 @@ const UserContent = () => {
                 <span className="tonic-black">Tonic Black</span>
                 <span className="follow">Follow</span>
               </div>
-
-              {/* Modal for header profile */}
-              {showHeaderModal && (
-                <Modal
-                  showModal={showHeaderModal}
-                  closeModal={handleHeaderMouseLeave}
-                  position={modalPosition}
-                  customClass="header-modal" // Optional for different modal styles
-                />
-              )}
             </div>
           </div>
 
@@ -127,11 +139,15 @@ const UserContent = () => {
                 src={src}
                 alt={`Image ${index + 1}`}
                 loading="lazy"
+                onClick={() => handleImageClick(index)} // Click event to open the image
+                style={{ cursor: "pointer" }}
               />
             ))}
           </div>
 
+
           {/* Likes, Views, Comments Section */}
+
           <div className="pro-info-container">
             <div className="pro-like-blue">
               <button className="pro-button">
@@ -154,7 +170,6 @@ const UserContent = () => {
               <p>Published: March 17th 2023</p>
             </div>
           </div>
-
           {/* New Comments and Project Information Section */}
           <div className="comments-project-container">
             {/* First Column: User Comments Section */}
@@ -282,7 +297,6 @@ const UserContent = () => {
             <div className="plus-icon">
               <i className="fa-solid fa-plus"></i>
             </div>
-
             <span>Follow</span>
           </div>
           <div>
@@ -317,16 +331,33 @@ const UserContent = () => {
           </div>
         </nav>
 
-        {/* Sidebar Modal */}
-        {showSidebarModal && (
-          <Modal
-            showModal={showSidebarModal}
-            closeModal={handleSidebarMouseLeave}
-            position={modalPosition}
-            customClass="sidebar-modal" // Optional for different modal styles
-            onMouseEnter={handleModalMouseEnter}
-            onMouseLeave={handleModalMouseLeave}
-          />
+        {/* Full-screen Image Viewer Modal */}
+        {selectedImageIndex !== null && (
+          <div className="image-viewer full-screen">
+            <div className="image-viewer-content">
+              <button className="close-btn" onClick={handleClose}>X</button>
+
+              {/* Left Arrow */}
+              {selectedImageIndex > 0 && (
+                <button className="arrow-left" onClick={handlePrevious}>
+                  {"<"}
+                </button>
+              )}
+
+              <img
+                src={images[selectedImageIndex]}
+                alt={`Selected Image ${selectedImageIndex + 1}`}
+                className="full-screen-image"
+              />
+
+              {/* Right Arrow */}
+              {selectedImageIndex < images.length - 1 && (
+                <button className="arrow-right" onClick={handleNext}>
+                  {">"}
+                </button>
+              )}
+            </div>
+          </div>
         )}
       </div>
     </section>
