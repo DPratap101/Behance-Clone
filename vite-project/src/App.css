@@ -9,10 +9,9 @@ margin: 0;
  background-position: center;
  background-size: cover;
 height: 100vh;
- background-image: url("https://www.imagescanada.ca/wp-content/uploads/2018/09/Best-nature-spots-to-take-photos-in-Canada.jpg");
- display: flex;
- align-items: center;
- justify-content: center;
+ background-image: url("./pexels-asadphoto-457881.jpg");
+position: relative;
+ 
 }
 
 .rs-container form
@@ -22,14 +21,18 @@ flex-direction: column;
 padding: 20px;
 border-radius: 10px;
 background-color: white;
-align-items: center;
-justify-content: center;
+
 gap: 10px;
+position: absolute;
+left: 60%;
+top: 2%;
+height: 90%;
 }
 
 .rs-container form h2
 {
   margin: 0;
+  font-size: 35px;
 }
 
 .rs-container form button
@@ -39,4 +42,22 @@ gap: 10px;
   border: none;
   padding: 5px 10px;
   border-radius: 10px;
+  width: 80px;
+  position: relative;
+  left: 84%;
+}
+
+.rs-container form span
+{
+  color: blue;
+}
+
+.rs-container form h4
+{
+  margin: 0;
+}
+
+.label-01
+{
+  margin-top: 20px;
 }
