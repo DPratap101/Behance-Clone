@@ -108,7 +108,7 @@ function Navbar() {
           <a href="/jobs" className="nav-item">Jobs</a>
           <a href="/hire-freelancers" className="nav-item">Hire Freelancers</a>
           <a href="/behance-pro" className="nav-item">Behance <span className="highlight">PRO</span></a> {/* Added Behance PRO */}
-          <a href="" className="nav-item">Log In</a>
+          <a href="/login" className="nav-item">Log In</a>
           <a href="/signup" className="nav-item">Sign Up</a>
           
         </div>
