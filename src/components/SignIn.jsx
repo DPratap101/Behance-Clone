@@ -1,14 +1,16 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "../styles/SignIn.css";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoggingIn, setIsLoggingIn] = useState(false); // New state to track login status
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
+  const navigate = useNavigate(); // Initialize navigate
 
   const loginFn = async (event) => {
     event.preventDefault();
-    setIsLoggingIn(true); // Set login state to true when starting the login process
+    setIsLoggingIn(true);
 
     const api = "AIzaSyDHO9-l6UOCnT2HN7EdAJczOb3Se8LDTQY";
 
@@ -36,14 +38,14 @@ const SignIn = () => {
       if (result.idToken) {
         alert("Welcome Back, We Missed You 🥹");
         localStorage.setItem("idToken", result.idToken);
-        window.location.href = "./index.html"; // Redirect to homepage
+        navigate("/"); // Navigate to the UserContent page
       } else {
         alert("Invalid credentials. Please try again.");
       }
     } catch (error) {
       console.error("Login error", error);
     } finally {
-      setIsLoggingIn(false); // Reset login state after login attempt
+      setIsLoggingIn(false);
     }
   };
 
@@ -57,7 +59,7 @@ const SignIn = () => {
             src="https://img.icons8.com/glyph-neue/64/behance.png"
             alt="behance"
           />
-          <p><i class="fa-brands fa-behance"></i>hance</p>
+          <p><i className="fa-brands fa-behance"></i>hance</p>
         </div>
       </div>
 
@@ -88,18 +90,18 @@ const SignIn = () => {
           <button
             type="submit"
             className="continue-btn"
-            disabled={isLoggingIn} // Disable button while logging in
+            disabled={isLoggingIn}
           >
-            {isLoggingIn ? "Logging in..." : "Continue"} {/* Show spinner or text */}
+            {isLoggingIn ? "Logging in..." : "Continue"}
           </button>
         </form>
 
         <div className="or-separator">Or</div>
 
         <div className="social-buttons">
-          <button className="social-btn google"><i class="fa-brands fa-google"></i> Continue with Google</button>
-          <button className="social-btn facebook"><i class="fa-brands fa-facebook"></i> Continue with Facebook</button>
-          <button className="social-btn apple"><i class="fa-brands fa-apple"></i> Continue with Apple</button>
+          <button className="social-btn google"><i className="fa-brands fa-google"></i> Continue with Google</button>
+          <button className="social-btn facebook"><i className="fa-brands fa-facebook"></i> Continue with Facebook</button>
+          <button className="social-btn apple"><i className="fa-brands fa-apple"></i> Continue with Apple</button>
         </div>
 
         <a href="/help-sign-in" className="help-link">

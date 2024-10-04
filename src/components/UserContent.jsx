@@ -170,27 +170,31 @@ const UserContent = () => {
               <p>Published: March 17th 2023</p>
             </div>
           </div>
+          
           {/* New Comments and Project Information Section */}
           <div className="comments-project-container">
             {/* First Column: User Comments Section */}
             <div className="comments-column">
               {!isLoggedIn ? (
-                <>
-                  <h3>Join the Conversation</h3>
+                <div className="comment-box">
+                  <h3 className="comment-box-heading">Join the Conversation</h3>
                   <p>Add your feedback for Tonic Black’s project by signing in or signing up</p>
+                  <div className="comment-box-button">
                   <button className="sign-up-button">Sign Up with Email</button>
                   <div className="social-login-buttons">
-                    <button>
-                      <i className="fa-brands fa-google"></i>
-                    </button>
+                    <span>or</span>
                     <button>
                       <i className="fa-brands fa-apple"></i>
                     </button>
                     <button>
                       <i className="fa-brands fa-facebook-f"></i>
                     </button>
+                    <button>
+                      <i className="fa-brands fa-google"></i>
+                    </button>
                   </div>
-                </>
+                  </div>
+                </div>
               ) : (
                 <>
                   <textarea placeholder="Write a comment..." rows="4"></textarea>
@@ -203,7 +207,7 @@ const UserContent = () => {
                 {/* Placeholder for user comments */}
                 {[...Array(10)].map((_, index) => (
                   <div key={index} className="user-comment">
-                    <div className="user-comment-image"></div>
+                    <button className="user-comment-image"><img src="https://mir-s3-cdn-cf.behance.net/user/100/7307361192903651.62d6fa161b020.jpg" alt="" /></button>
                     <p>User comment {index + 1}</p>
                   </div>
                 ))}
@@ -267,8 +271,8 @@ const UserContent = () => {
               </div>
 
               {/* Tools Card */}
-              <div className="info-card">
-                <h4>Tools</h4>
+              <div className="info-card tools-card">
+                <h4 className="info-card-heading">Tools</h4>
                 <div className="creative-buttons">
                   <button className="creative-button">Web Design</button>
                   <button className="creative-button">UI/UX</button>
