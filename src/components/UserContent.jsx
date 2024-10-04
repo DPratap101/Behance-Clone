@@ -225,7 +225,7 @@ const UserContent = () => {
                   </button>
                   <div className="owner-name-loc">
                     <p>Tonic Black</p>
-                    <p><i class="fa-solid fa-location-dot"></i> Minsk, Belarus</p>
+                    <p><i className="fa-solid fa-location-dot"></i> Minsk, Belarus</p>
                   </div>
                 </div>
                 <div className="owner-info-btn">
@@ -339,12 +339,12 @@ const UserContent = () => {
         {selectedImageIndex !== null && (
           <div className="image-viewer full-screen">
             <div className="image-viewer-content">
-              <button className="close-btn" onClick={handleClose}><i class="fa-regular fa-circle-xmark"></i></button>
+              <button className="close-btn" onClick={handleClose}><i className="fa-regular fa-circle-xmark"></i></button>
 
               {/* Left Arrow */}
               {selectedImageIndex > 0 && (
                 <button className="arrow-left" onClick={handlePrevious}>
-                  {<i class="fa-solid fa-chevron-left"></i>}
+                  {<i className="fa-solid fa-chevron-left"></i>}
                 </button>
               )}
 
@@ -357,7 +357,7 @@ const UserContent = () => {
               {/* Right Arrow */}
               {selectedImageIndex < images.length - 1 && (
                 <button className="arrow-right" onClick={handleNext}>
-                  {<i class="fa-solid fa-chevron-right"></i>}
+                  {<i className="fa-solid fa-chevron-right"></i>}
                 </button>
               )}
             </div>
