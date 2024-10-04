@@ -1,34 +1,23 @@
-
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/Homepage";
-import JobPage from "./pages/JobPage";
-import './App.css'
+import Navbar from "./components/Navbar";
+import UserContent from "./components/UserContent";
+import Footer from "./components/footer/Footer";
+import SignIn from "./components/SignIn";
+import Content from "./components/Content/Content"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    // <Router>
-    //   <Navbar />
-      
-    //   <Routes>
-    //     <Route path="/" element={<UserContent />} />
-
-    //     <Route path="/login" element={<SignIn />} />
-
-    //   </Routes>
-    //   {/* <Footer /> */}
-    //   {/* <Content /> */}
-    // </Router>
-    <BrowserRouter>
+    <Router>
+      <Navbar />
       <Routes>
-
-      <Route index element={<HomePage/>} />
-      <Route path='/'  element={<HomePage/>} />
-      <Route path='/jobs' element={<JobPage/>} />
-      
+        <Route path="/" element={<UserContent />} />
+        <Route path="/login" element={<SignIn />} />
+        <Route path="/assets" element={<Content />} />
+        <Route path='/jobs' element={<JobPage/>} />
       </Routes>
-    </BrowserRouter>
-      
+      {/* <Footer /> */}
+      {/* <Content /> */}
+    </Router>
   );
 }
 
