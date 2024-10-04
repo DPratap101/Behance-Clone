@@ -13,6 +13,7 @@ function App() {
         <Route path="/" element={<UserContent />} />
         <Route path="/login" element={<SignIn />} />
         <Route path="/assets" element={<Content />} />
+        <Route path='/jobs' element={<JobPage/>} />
       </Routes>
       {/* <Footer /> */}
       {/* <Content /> */}
