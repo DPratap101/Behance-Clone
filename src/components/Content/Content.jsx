@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import "../../styles/content.css";
 import data from "./data/data.json";
+import AssetModal from "./AssetModal";
 
 const Content = () => {
   const [showCategories, setShowCategories] = useState(true);
   const [showFileExtensions, setShowFileExtensions] = useState(true);
   const [showPrice, setShowPrice] = useState(true);
-  
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedExtensions, setSelectedExtensions] = useState([]);
   const [selectedPrice, setSelectedPrice] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedAsset, setSelectedAsset] = useState(null); // State for selected asset
 
   const toggleAccordion = (filter) => {
     if (filter === "categories") {
@@ -41,20 +42,28 @@ const Content = () => {
     setSearchTerm(e.target.value.toLowerCase());
   };
 
+  const handleCardClick = (asset) => {
+    setSelectedAsset(asset); // Set the selected asset
+  };
+
+  const handleCloseModal = () => {
+    setSelectedAsset(null); // Reset the selected asset to close the modal
+  };
+
   const filteredData = data.filter((asset) => {
     const assetCategory = asset.category.toLowerCase();
     const normalizedSelectedCategory = selectedCategory.toLowerCase();
 
-    const matchesCategory = 
+    const matchesCategory =
       normalizedSelectedCategory === "all" || assetCategory === normalizedSelectedCategory;
 
     const matchesExtension = selectedExtensions.length === 0 || selectedExtensions.includes(asset.fileType);
-    
-    const matchesPrice = 
-      selectedPrice === "all" || 
-      (selectedPrice === "free" && asset.priceType === "free") || 
+
+    const matchesPrice =
+      selectedPrice === "all" ||
+      (selectedPrice === "free" && asset.priceType === "free") ||
       (selectedPrice === "paid" && asset.priceType === "premium");
-    
+
     const matchesSearch = asset.title.toLowerCase().includes(searchTerm);
 
     return matchesCategory && matchesExtension && matchesPrice && matchesSearch;
@@ -181,7 +190,7 @@ const Content = () => {
         </div>
         <div className="asts-cards">
           {filteredData.map((asset) => (
-            <div className="asts-card" key={asset.id}>
+            <div className="asts-card" key={asset.id} onClick={() => handleCardClick(asset)}>
               <img src={asset.imageUrl} alt={asset.title} />
               <div className="asts-card-content">
                 <h3>{asset.title}</h3>
@@ -199,6 +208,9 @@ const Content = () => {
           ))}
         </div>
       </div>
+      {selectedAsset && (
+        <AssetModal asset={selectedAsset} onClose={handleCloseModal} />
+      )}
     </div>
   );
 };
