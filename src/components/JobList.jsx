@@ -1003,10 +1003,10 @@ const filteredJobListings = jobListings.filter((job) => {
 });
 
 return (
-  <div className="job-listings">
-    <div className="job-listings-header">
+  <div className="job_listings">
+    <div className="job_listings_header">
       <h2>Full-Time Jobs ({filteredJobListings.length})</h2>
-      <div className="search-bar">
+      <div className="job_search">
         <input
           type="text"
           placeholder="Search Full-Time Jobs..."
@@ -1016,21 +1016,21 @@ return (
       </div>
     </div>
 
-    <div className="job-cards">
+    <div className="job_cards">
       {filteredJobListings.length > 0 ? (
         filteredJobListings.map((job, index) => (
-          <div className="job-card" key={index}>
-            <div className="job-company">
-              <img src={job.logo} alt={`${job.company} logo`} className="company-logo" />
+          <div className="job_card" key={index}>
+            <div className="job_company">
+              <img src={job.logo} alt={`${job.company} logo`} className="jobcompany_logo" />
               <strong>{job.company}</strong>
             </div>
-            <div className="job-location">
+            <div className="job_location">
               <i className="fa-solid fa-location-dot" style={{ color: '#d0d3d7', marginRight: '5px' }}></i>
               <span>{job.location}</span>
             </div>
-            <h3 className="job-title">{job.title}</h3>
-            <p className="job-description">{job.description}</p>
-            <span className="job-days-ago">{job.daysAgo}</span>
+            <h3 className="job_title">{job.title}</h3>
+            <p className="job_description">{job.description}</p>
+            <span className="job_days_ago">{job.daysAgo}</span>
           </div>
         ))
       ) : (
