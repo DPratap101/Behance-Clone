@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import '../styles/Sidebar.css';
 
@@ -21,9 +22,6 @@ const Sidebar = ({ onCategorySelect }) => {
     'Eastern Europe': ['Warsaw', 'Prague', 'Budapest', 'Bucharest', 'Kiev', 'Sofia', 'Tallinn', 'Riga', 'Vilnius', 'Minsk'],
   };
 
-  // State for modal open/close
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-
   const toggleLocation = () => {
     setIsLocationOpen(!isLocationOpen);
   };
@@ -42,49 +40,11 @@ const Sidebar = ({ onCategorySelect }) => {
     setSelectedCity(city);
   };
 
-  // Popup open and close functions
-  const openPopup = () => {
-    setIsPopupOpen(true);
-  };
-
-  const closePopup = () => {
-    setIsPopupOpen(false);
-  };
-
   return (
     <aside className="sidepanel">
       {/* New Job Button */}
-      <button className="new_job_btn" onClick={openPopup}>+ New Job</button>
-
-      {/* Popup */}
-      {isPopupOpen && (
-        <div className="popup" onClick={closePopup}>
-          <div className="popup_content" onClick={(e) => e.stopPropagation()}>
-            <span className="close" onClick={closePopup}>&times;</span>
-            <div className="popup_body">
-              <div className="job_selection freelance">
-                <h3>Hire a Freelancer</h3>
-                <ul>
-                  <li>Get proposals from creators matching your needs</li>
-                  <li>Discuss, share files & schedule video calls</li>
-                  <li>Pay seamlessly and securely with a credit card</li>
-                </ul>
-                <button>Find a Freelancer Today</button>
-              </div>
-
-              <div className="job_selection full-time">
-                <h3>Post a Full-Time Job</h3>
-                <ul>
-                  <li>Share your job opportunity with millions of designers</li>
-                  <li>Redirect applications to your favorite external tool</li>
-                  <li>Job posts are free and expire after 30 days</li>
-                </ul>
-                <button>Post a Full-Time Job</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* <button className="new_job_btn">+ New Job</button> */}
+      <button className="new_job_btn"><i class="fa-brands fa-square-behance"></i> <i class="fa-brands fa-behance"></i>hance</button>
 
       {/* Categories Section */}
       <div className="categories">

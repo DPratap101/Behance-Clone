@@ -83,13 +83,26 @@
 .new_job_btn {
   width: 100%; /* Full width for the button */
   padding: 10px; /* Padding for button */
-  background-color: #6A82FB; /* Button background color */
-  color: #fff; /* Button text color */
+  background-color: transparent; /* Button background color */
+  color: #001b9f; /* Button text color */
+  font-size: 25px;
   border: none; /* No border */
   border-radius: 5px; /* Rounded corners */
   cursor: pointer; /* Pointer cursor on hover */
   font-size: 16px; /* Font size */
   transition: background-color 0.3s; /* Smooth transition */
+}
+
+.new_job_btn-pro{
+  width: 100%; 
+  padding: 10px;
+  background-color: #6A82FB; 
+  color: #fff;
+  border: none;
+  border-radius: 5px; 
+  cursor: pointer;
+  font-size: 16px; 
+  transition: background-color 0.3s; 
 }
 
 /* .new_job_btn:hover {
@@ -159,5 +172,14 @@
 @media (max-width: 480px) {
   .sidepanel {
     display: none; /* Hide the sidepanel on small screens */
+  }
+  .new_job_btn-pro{
+    padding: 15px 25px;
+    position: sticky;
+    top: 100px;
+    z-index: 10;
+  }
+  .new_job_btn-pro>span{
+    display: none;
   }
 }
