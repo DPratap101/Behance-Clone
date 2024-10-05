@@ -978,6 +978,15 @@ const JobListings = ({ selectedCategory }) => {
       category: 'Branding Services',
     },
     {
+      company: "Snaptics Business So...",
+      logo:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQdndY6StCg5xp0AZ41dZ4RUjnVveTjQtr8h2rZTKQm1lgT33t",
+      location: 'India',
+      title: 'Looking for UI/UX Designer',
+      description: 'Looking for UI/UX designers. ',
+      daysAgo: '9 days ago',
+      category: 'Illustrations',
+    },
+    {
       company: "Bosscoder Academy",
       logo:"https://thumbs.dreamstime.com/z/three-way-direction-arrow-isometric-flat-icon-d-vector-colorful-illustration-pictogram-isolated-white-background-87961917.jpg",
       location: 'India',
@@ -992,18 +1001,31 @@ const JobListings = ({ selectedCategory }) => {
 
 
 
+// const filteredJobListings = jobListings.filter((job) => {
+//   const categoryMatches = selectedCategory === 'All' || job.category === selectedCategory;
+//   const searchMatches =
+//     job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+//     job.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
+//     job.description.toLowerCase().includes(searchTerm.toLowerCase());
+
+//   return categoryMatches && searchMatches;
+// });
 const filteredJobListings = jobListings.filter((job) => {
-  const categoryMatches = selectedCategory === 'All' || job.category === selectedCategory;
-  const searchMatches =
+  if (selectedCategory !== 'All' && job.category !== selectedCategory) {
+    return false;
+  }
+
+  return (
     job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     job.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    job.description.toLowerCase().includes(searchTerm.toLowerCase());
-
-  return categoryMatches && searchMatches;
+    job.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    job.location.toLowerCase().includes(searchTerm.toLowerCase()) // Optional: add location search
+  );
 });
 
+
 return (
-  <div className="job_listings">
+  <div className="job_listings" style={{marginTop: '0px'}}>
     <div className="job_listings_header">
       <h2>Full-Time Jobs ({filteredJobListings.length})</h2>
       <div className="job_search">
