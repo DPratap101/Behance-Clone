@@ -148,3 +148,72 @@ body {
     }
   }
   
+@media only screen and (max-width: 768px) {
+  .sign-up-container {
+      flex-direction: column;
+      height: auto;
+      padding: 20px;
+  }
+
+  .sign-up-box {
+      width: 90%;
+      height: auto;
+      margin: auto;
+  }
+
+  .signin-left {
+      height: 150px;
+      width: 150px;
+      margin-top: 30px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .sign-up-container {
+      padding: 40px;
+  }
+
+  .sign-up-box {
+      width: 70%;
+      height: auto;
+  }
+
+  .signin-left {
+      height: 180px;
+      width: 180px;
+      margin-top: 40px;
+  }
+
+  .sign-up-box h2 {
+      font-size: 22px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .sign-up-box h2 {
+      font-size: 20px;
+  }
+
+  .input-field, .continue-btn, .social-btn {
+      font-size: 14px;
+  }
+
+  .or-separator {
+      font-size: 12px;
+  }
+
+  .help-link {
+      font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .signin-left {
+      height: 100px;
+      width: 100px;
+  }
+
+  .sign-up-box {
+      padding: 20px;
+  }
+}
