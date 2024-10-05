@@ -5,7 +5,7 @@ import '../styles/JobList.css';
 const JobListings = ({ selectedCategory }) => {
   // State for search term
   const [searchTerm, setSearchTerm] = useState('');
-  // Sample job listings
+  
   const jobListings = [
     {
       company: 'Make Relish',
@@ -1064,3 +1064,4 @@ return (
 };
 
 export default JobListings;
+
