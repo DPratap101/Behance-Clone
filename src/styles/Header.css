@@ -3,7 +3,7 @@ body {
   overflow-x: hidden;
 }
 
-.navbar {
+.header_navbar {
   position: fixed;
   top: 0;
   /* max-width: 1500;Ensure it spans the full width */
@@ -12,17 +12,17 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 30px;
+  padding: 20px 30px;
   border-bottom: 1px solid grey;
   width: 100%; /* Adjust width to be responsive */
    /* Limit to a max size */
-  /* padding: 20px 30px; */
+  
   /* overflow-x: hidden; */
 }
 
 
 /* Add a black overlay using the ::before pseudo-element */
-.header::before {
+.job_header::before {
   content: "";
   position: fixed;
   top: 0;
@@ -33,14 +33,14 @@ body {
   z-index: -1; /* Push the overlay behind the content */
 }
 
-.navbar {
+.header_navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid grey;
 }
 
-.logo {
+.header_logo {
   font-size: 24px;
   font-weight: bold;
   color: white;
@@ -68,7 +68,7 @@ body {
   gap: 10px;
 }
 
-.btn {
+.header_btn {
   padding: 8px 16px;
   font-size: 16px;
   border: none;
@@ -78,12 +78,17 @@ body {
   background-color: #eff0f0;
 }
 
-.btn.signup {
+.header_btn_signup {
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
   background-color: rgb(76, 76, 242);
   color:white;
 }
 
-.adobe-icon {
+.header_adobe_icon {
   margin-left: 15px;
   font-size: 16px;
   color: white;
@@ -92,15 +97,16 @@ body {
 /* Styles for the "Creative Jobs" section */
 .header-content {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 80px;
   top: 0;
-  width: 100%; /* Ensure it spans the full width */
+  width: 100%;
+   /* Ensure it spans the full width */
   z-index: 1; /* Ensure it stays on top of other elements */
   background-image: url('../assets/background.jpg'); /* Optional: semi-transparent background */
   /* display: flex; */
   justify-content: space-between;
   align-items: center;
-  padding: 10px 30px; 
+  padding: 20px 30px; 
   color:white;
 }
 

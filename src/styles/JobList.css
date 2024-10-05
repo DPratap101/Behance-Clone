@@ -1,13 +1,13 @@
-.job-listings {
+.job_listings {
   padding: 20px;
   flex-grow: 1;
   background-color: white;
   width: 100%; /* Adjust width to be responsive */
-  max-width: 1460px; /* Limit to a max size */
+  /* Limit to a max size */
   overflow-x: hidden;
 }
 
-.job-listings-header {
+.job_listings_header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,10 +16,9 @@
   color: rgb(89, 86, 86);
 }
 
-.search-bar input {
+.job_search input {
   padding: 10px;
   width: 300px;
-  border-radius: 5px;
   margin-right: 90px;
   border: 1px solid #eaeaea;
   font-size: 16px;
@@ -27,7 +26,7 @@
   border-radius: 20px;
 }
 
-.job-cards {
+.job_cards {
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
@@ -38,7 +37,7 @@
 
 }
 
-.job-card {
+.job_card {
   padding: 15px;
   border: 1px solid #eaeaea;
   border-radius: 5px;
@@ -46,44 +45,44 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-.job-card:hover {
+.job_card:hover {
   background-color: white; /* Light background color when hovered */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
   transform: translateY(-5px); /* Lift the card a bit */
 }
 
-.job-company {
+.job_company {
   display: flex;
   align-items: center; /* Align logo and company name vertically */
   margin-bottom: 10px;
 }
 
-.company-logo {
+.jobcompany_logo {
   width: 40px; /* Set logo width */
   height: auto; /* Maintain aspect ratio */
   margin-right: 10px; /* Space between logo and company name */
 }
 
-.job-location {
+.job_location {
   display: flex;
   align-items: center; /* Align icon and text vertically */
   margin-bottom: 10px;
    font-size: 13px;
 }
 
-.job-title {
+.job_title {
   font-size: 14px;
   font-weight:bold;
   margin: 10px 0;
  
 }
 
-.job-description {
+.job_description {
   font-size: 13px;
   margin-bottom: 10px;
 }
 
-.job-days-ago {
+.job_days_ago {
   color: #747070;
   font-size: 12px;
 }
