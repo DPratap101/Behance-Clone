@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
-import Sidebar from '../components/Sidebar'; 
-import JobList from '../components/JobList'; 
+import Sidebar from '../components/Sidebar';
+import JobList from '../components/JobList';
 import Jobfooter from '../components/Jobfooter';
 
 const JobPage = () => {
@@ -14,7 +14,7 @@ const JobPage = () => {
   return (
     <div className="app">
       <Header />
-      <div className="content-container">
+      <div className="" style={{display: 'flex', flexDirection: 'row', width: '100%'}}>
         <Sidebar onCategorySelect={handleCategorySelect} />
         <JobList selectedCategory={selectedCategory} />
       </div>
