@@ -16,8 +16,9 @@ function App() {
         <Route path="/assets" element={<Content />} />
         <Route path='/jobs' element={<JobPage/>} />
       </Routes>
-      {/* <Footer /> */}
+      
       {/* <Content /> */}
+      <Footer />
     </Router>
   );
 }
