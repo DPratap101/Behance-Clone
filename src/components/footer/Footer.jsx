@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import footerlogo from "../../assets/footerlogo.png"
 
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
         <div className="logo-and-linksABK">
           <div className="behance-logoABK">
             <a href="#root">
-              <img src="../../assets/footerlogo.png" alt="Behance Logo" />
+              <img src={footerlogo} alt="Behance Logo" />
             </a>
           </div>
           <div className="links-containerABK">
