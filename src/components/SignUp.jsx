@@ -33,9 +33,9 @@ const SignUp = () => {
       const result = await response.json();
 
       if (result.idToken) {
-        alert("Welcome To Adiclub 🥳");
+        alert("Welcome To Behance 🥳");
         localStorage.setItem("idToken", result.idToken);
-        window.location.href = "../login.html";
+        window.location.href = "/login";
       } else {
         alert("Sign-up failed. Please try again.");
       }
