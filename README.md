@@ -10,7 +10,7 @@ Digital Democracy 030 is a web application aimed at enhancing democratic engagem
 - Frontend: [Digital Democracy 030](https://digital-democracy-030.vercel.app/)
 
 ## Directory Structure
-'''
+```
 Digital_Democracy_030
 │
 ├───.vercel
@@ -29,7 +29,7 @@ Digital_Democracy_030
 ├───eslint.config.js
 ├───vercel.json
 └───vite.config.js
-'''
+```
 
 
 ## Video Walkthrough of the project
@@ -49,13 +49,13 @@ To install and run the project locally, follow these steps:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/digital-democracy-030.git
-cd digital-democracy-030
+git clone https://github.com/DPratap101/Digital_Democracy_030.git
+cd Digital_Democracy_030
 
 # Install dependencies
 npm install
 
 # Start the application
-npm start
+npm run dev
 
 
