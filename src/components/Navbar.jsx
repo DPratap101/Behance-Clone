@@ -58,8 +58,8 @@ function Navbar() {
           )}
         </div>
 
-        <a href="/assets" className="nav-item" >Assets</a>
-        <a href="/jobs" className="nav-item">Jobs</a>
+        <Link to="/assets" className="nav-item">Assets</Link>
+        <Link to="/jobs" className="nav-item">Jobs</Link>
         <a href="/behance-pro" className="nav-item">Behance <span className="highlight">PRO</span></a>
 
         <div className="dropdown"
@@ -93,7 +93,7 @@ function Navbar() {
       <div className="navbar-right">
         <i className="fa-solid fa-bell" style={{ color: '#0a0a0a', marginRight: '10px' }}></i> {/* Adjust margin for bell */}
         <Link to="/login" className="login-button">Log In</Link>
-        <a href="/signup" className="signup-button">Sign Up</a>
+        <Link to="/signup" className="signup-button">Sign Up</Link>
         <p><img src={adobeLogo} className="adobe-logo" alt="Adobe" /></p>
       </div>
 
@@ -104,12 +104,12 @@ function Navbar() {
       {/* Mobile nav */}
       {mobileNavOpen && (
         <div className="mobile-nav">
-          <a href="/assets" className="nav-item">Assets</a>
-          <a href="/jobs" className="nav-item">Jobs</a>
-          <a href="/hire-freelancers" className="nav-item">Hire Freelancers</a>
+          <Link to="/assets" className="nav-item">Assets</Link>
+          <Link to="/jobs" className="nav-item">Jobs</Link>
+          <Link to="/hire-freelancers" className="nav-item">Hire Freelancers</Link>
           <a href="/behance-pro" className="nav-item">Behance <span className="highlight">PRO</span></a> {/* Added Behance PRO */}
-          <a href="/login" className="nav-item">Log In</a>
-          <a href="/signup" className="nav-item">Sign Up</a>
+          <Link to="/login" className="nav-item">Log In</Link>
+          <Link to="/signup" className="nav-item">Sign Up</Link>
           
         </div>
       )}
