@@ -6,6 +6,18 @@ Behance Clone is a web application aimed at enhancing democratic engagement by p
 ## Project Type
 **Fullstack**
 
+## Technology Stack
+The following technologies were used in the development of the Behance Clone:
+### Frontend
+- **React**: A JavaScript library for building user interfaces, allowing for the creation of reusable components.
+- **CSS**: For styling the application, ensuring a responsive and user-friendly design.
+- **Vite**: A build tool that provides fast development and a production-ready build.
+### Additional Technologies
+- **Git**: This is for version control, enabling collaboration and code management.
+- **Vercel**: For deployment, a platform is provided to host the application and serve it to users.
+### Development Tools
+- **Visual Studio Code**: An integrated development environment (IDE) for writing and managing code.
+
 ## Deployed App
 - Frontend: [Digital Democracy 030](https://digital-democracy-030.vercel.app/)
 
