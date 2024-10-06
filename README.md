@@ -1,7 +1,7 @@
-# Digital Democracy 030
+# Behance-Clone
 
 ## Introduction
-Digital Democracy 030 is a web application aimed at enhancing democratic engagement by providing users with a platform to participate in discussions, share insights, and contribute to decision-making processes. The core functionality includes job postings, user profiles, and interactive content, addressing the need for a more connected and informed citizenry.
+Behance Clone is a web application aimed at enhancing democratic engagement by providing users with a platform to participate in discussions, share insights, and contribute to decision-making processes. The core functionality includes job postings, user profiles, and interactive content, addressing the need for a more connected and informed citizenry.
 
 ## Project Type
 **Fullstack**
