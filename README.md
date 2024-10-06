@@ -25,22 +25,28 @@ The following technologies were used in the development of the Behance Clone:
 ```
 Digital_Democracy_030
 │
-├───.vercel
-├───dist
-├───node_modules
-├───public
-├───src
-│   ├───assets
-│   ├───components
-│   │   ├───Content
-│   │   └───footer
-│   ├───pages
-│   └───styles
-├───.gitattributes
-├───.gitignore
-├───eslint.config.js
-├───vercel.json
-└───vite.config.js
+├─── .vercel
+├─── dist
+├─── node_modules
+├─── public
+├─── src
+│   ├─── assets
+│   ├─── components
+│   │   ├─── Content
+│   │   └─── footer
+│   ├─── pages
+│   ├─── styles
+│   ├───App.css
+│   ├───App.jsx
+│   ├───index.css
+│   └───main.jsx
+│
+├─── .gitattributes
+├─── .gitignore
+├─── eslint.config.js
+├─── vercel.json
+└─── vite.config.js
+
 ```
 
 
