@@ -171,3 +171,18 @@
   border-color: #6A82FB; /* Change border color on focus */
   outline: none; /* Remove default outline */
 }
+
+@media (max-width: 768px) {
+  .sidepanel {
+    width: 100%; /* Full width on mobile */
+    position: relative; /* Change position for stacking */
+    height: auto; /* Adjust height for mobile */
+  }
+
+  /* Ensure that the sidebar comes below the banner */
+  .asts-banner {
+    width: 100%; /* Full width for the banner */
+    margin-bottom: 20px; /* Space below the banner */
+  }
+}
+

@@ -1,3 +1,4 @@
+
 .behance-logoABK img {
   width: 60px;
   height: 60px;
@@ -9,7 +10,7 @@
   font-weight: bold;
   margin-bottom: 2rem;
   margin-top: 2rem;
-  width: 100%;
+  width: 15rem;
 }
 
 .social-iconsABK ul li a {
@@ -57,7 +58,6 @@ footer {
 .footer-sectionABK {
   display: inline-block;
   margin-right: 20px;
-  width: 100%;
 }
 
 .footer-sections-wrapperABK {
@@ -146,31 +146,17 @@ footer {
 
 @media only screen and (max-width: 768px) {
   .footer-contentABK {
-      flex-direction: column;
+    flex-direction: column;
   }
-
   .footer-sectionABK {
-      margin-bottom: 20px;
-      display: block;
-      width: 100%;
+    margin-bottom: 20px;
+    display: block;
   }
-
   .footer-sections-wrapperABK {
-      flex-direction: column;
-      width: 100%;
+    flex-direction: column;
   }
-
   .copyright-legalABK {
-      display: none;
-  }
-
-  .social-iconsABK {
-      justify-content: center;
-      padding: 0;
-  }
-
-  .behance-logoABK {
-      display: none;
+    display: none;
   }
 }
 
